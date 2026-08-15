@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dictionaries — learn.py</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js"></script>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand"><a href="index.html"><span class="brand-title">learn<span class="dot">.</span>py</span></a></div>
+    <div class="brand-sub">A hands-on first course in Python — write real code, see it run.</div>
+    <div class="progress-wrap">
+      <div class="progress-label"><span>Progress</span><span id="progressText">0 / 12</span></div>
+      <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+    </div>
+    <ul class="lesson-nav">
+      <li data-slug="lesson-01"><a href="lesson-01.html"><span class="lesson-num">1</span><span>Say Hello</span></a></li>
+      <li data-slug="lesson-02"><a href="lesson-02.html"><span class="lesson-num">2</span><span>Variables</span></a></li>
+      <li data-slug="lesson-03"><a href="lesson-03.html"><span class="lesson-num">3</span><span>Numbers &amp; Math</span></a></li>
+      <li data-slug="lesson-04"><a href="lesson-04.html"><span class="lesson-num">4</span><span>Strings</span></a></li>
+      <li data-slug="lesson-05"><a href="lesson-05.html"><span class="lesson-num">5</span><span>Lists</span></a></li>
+      <li data-slug="lesson-06"><a href="lesson-06.html"><span class="lesson-num">6</span><span>Making decisions</span></a></li>
+      <li data-slug="lesson-07"><a href="lesson-07.html"><span class="lesson-num">7</span><span>Loops</span></a></li>
+      <li data-slug="lesson-08"><a href="lesson-08.html"><span class="lesson-num">8</span><span>Functions</span></a></li>
+      <li data-slug="lesson-09" class="active"><a href="lesson-09.html"><span class="lesson-num">9</span><span>Dictionaries</span></a></li>
+      <li data-slug="lesson-10"><a href="lesson-10.html"><span class="lesson-num">10</span><span>Tuples &amp; Sets</span></a></li>
+      <li data-slug="lesson-11"><a href="lesson-11.html"><span class="lesson-num">11</span><span>Handling errors</span></a></li>
+      <li data-slug="lesson-12"><a href="lesson-12.html"><span class="lesson-num">12</span><span>Classes</span></a></li>
+    </ul>
+    <div class="sidebar-foot">Code runs live in your browser via Pyodide — nothing is sent to a server. Progress is saved on this device.</div>
+  </aside>
+  <main class="main">
+
+    <div class="lesson-head">
+      <div>
+        <div class="lesson-eyebrow">Lesson 9 · Key-value pairs</div>
+        <h2>Dictionaries</h2>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="lesson-card">
+        <p>A <b>dictionary</b> stores values under keys instead of positions, written in curly braces as <code>key: value</code> pairs.</p><p>Look up a value with <code>my_dict["key"]</code>, or use <code>.get("key")</code> to avoid an error when the key might be missing.</p>
+        <div class="callout">Dictionaries are perfect for structured records — think of one as a single row of labeled fields.</div>
+        <div class="challenge">
+          <div class="challenge-label">Try it yourself</div>
+          <p style="margin:0;">Add your own key called hobby to the dictionary and print it.</p>
+        </div>
+        
+        <div class="quiz">
+          <div class="quiz-label">Check your understanding</div>
+          
+        <div class="quiz-q" id="quiz-lesson-09-0">
+          <div class="quiz-q-text">1. How do you access a dictionary value by key?</div>
+          <div class="quiz-opts"><button class="quiz-opt" onclick="checkQuiz('lesson-09-0', 0, 1)">dict.key</button><button class="quiz-opt" onclick="checkQuiz('lesson-09-0', 1, 1)">dict[key]</button><button class="quiz-opt" onclick="checkQuiz('lesson-09-0', 2, 1)">dict-&gt;key</button><button class="quiz-opt" onclick="checkQuiz('lesson-09-0', 3, 1)">dict(key)</button></div>
+          <div class="quiz-feedback"></div>
+        </div>
+        <div class="quiz-q" id="quiz-lesson-09-1">
+          <div class="quiz-q-text">2. What does .get() do differently from [ ]?</div>
+          <div class="quiz-opts"><button class="quiz-opt" onclick="checkQuiz('lesson-09-1', 0, 1)">Nothing, they&#x27;re identical</button><button class="quiz-opt" onclick="checkQuiz('lesson-09-1', 1, 1)">It won&#x27;t error if the key is missing</button><button class="quiz-opt" onclick="checkQuiz('lesson-09-1', 2, 1)">It deletes the key</button><button class="quiz-opt" onclick="checkQuiz('lesson-09-1', 3, 1)">It only works on lists</button></div>
+          <div class="quiz-feedback"></div>
+        </div>
+        </div>
+      </div>
+      <div class="editor-col">
+        <div class="editor-panel">
+          <div class="panel-bar">
+            <span class="dots"><span></span><span></span><span></span></span>
+            <span>editor.py</span>
+          </div>
+          <textarea class="code-input" id="codeInput" spellcheck="false">person = {&quot;name&quot;: &quot;Ada&quot;, &quot;age&quot;: 28, &quot;city&quot;: &quot;London&quot;}
+print(person[&quot;name&quot;])
+person[&quot;job&quot;] = &quot;Mathematician&quot;
+print(person)
+print(person.get(&quot;country&quot;, &quot;Unknown&quot;))</textarea>
+          <div class="run-row">
+            <button class="btn btn-run" id="runBtn" disabled onclick="runCode('lesson-09')">Run &#9656;</button>
+            <button class="btn btn-reset" onclick='resetCode("person = {\"name\": \"Ada\", \"age\": 28, \"city\": \"London\"}\nprint(person[\"name\"])\nperson[\"job\"] = \"Mathematician\"\nprint(person)\nprint(person.get(\"country\", \"Unknown\"))")'>Reset</button>
+            <span class="run-status" id="runStatus">Loading…</span>
+          </div>
+        </div>
+        <div class="console-panel">
+          <div class="panel-bar"><span>Output</span><span></span></div>
+          <div class="console-out" id="consoleOut"><span class="placeholder">Output will appear here.</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="lesson-footer">
+      <a class="nav-btn" href="lesson-08.html">&larr; Previous</a>
+      <a class="nav-btn" href="lesson-10.html">Next &rarr;</a>
+    </div>
+
+  </main>
+</div>
+<div class="loading-badge" id="loadingBadge">
+  <span class="spinner"></span>
+  <span id="loadingText">Starting Python engine…</span>
+</div>
+<script src="app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Learn Python — learn.py</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand"><a href="index.html"><span class="brand-title">learn<span class="dot">.</span>py</span></a></div>
+    <div class="brand-sub">A hands-on first course in Python — write real code, see it run.</div>
+    <div class="progress-wrap">
+      <div class="progress-label"><span>Progress</span><span id="progressText">0 / 12</span></div>
+      <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+    </div>
+    <ul class="lesson-nav">
+      <li data-slug="lesson-01"><a href="lesson-01.html"><span class="lesson-num">1</span><span>Say Hello</span></a></li>
+      <li data-slug="lesson-02"><a href="lesson-02.html"><span class="lesson-num">2</span><span>Variables</span></a></li>
+      <li data-slug="lesson-03"><a href="lesson-03.html"><span class="lesson-num">3</span><span>Numbers &amp; Math</span></a></li>
+      <li data-slug="lesson-04"><a href="lesson-04.html"><span class="lesson-num">4</span><span>Strings</span></a></li>
+      <li data-slug="lesson-05"><a href="lesson-05.html"><span class="lesson-num">5</span><span>Lists</span></a></li>
+      <li data-slug="lesson-06"><a href="lesson-06.html"><span class="lesson-num">6</span><span>Making decisions</span></a></li>
+      <li data-slug="lesson-07"><a href="lesson-07.html"><span class="lesson-num">7</span><span>Loops</span></a></li>
+      <li data-slug="lesson-08"><a href="lesson-08.html"><span class="lesson-num">8</span><span>Functions</span></a></li>
+      <li data-slug="lesson-09"><a href="lesson-09.html"><span class="lesson-num">9</span><span>Dictionaries</span></a></li>
+      <li data-slug="lesson-10"><a href="lesson-10.html"><span class="lesson-num">10</span><span>Tuples &amp; Sets</span></a></li>
+      <li data-slug="lesson-11"><a href="lesson-11.html"><span class="lesson-num">11</span><span>Handling errors</span></a></li>
+      <li data-slug="lesson-12"><a href="lesson-12.html"><span class="lesson-num">12</span><span>Classes</span></a></li>
+    </ul>
+    <div class="sidebar-foot">Code runs live in your browser via Pyodide — nothing is sent to a server. Progress is saved on this device.</div>
+  </aside>
+  <main class="main">
+
+    <section class="hero" id="hero">
+      <div class="hero-eyebrow">Start here</div>
+      <h1>Learn Python by running it.</h1>
+      <p style="margin:0 0 6px; color:var(--yellow); font-size:13px; font-weight:600;">by Habib</p>
+      <p>Twelve short lessons, each with a real editable code box. Type something, hit Run, and watch actual Python execute right on this page — plus a quick check at the end of each one.</p>
+      <div class="repl-line"><span class="prompt">&gt;&gt;&gt;</span><span id="heroTyped"></span><span class="caret"></span></div>
+    </section>
+    <section>
+      <div class="lesson-eyebrow" style="margin-bottom:10px;">All lessons</div>
+      <div class="lesson-grid">
+      <a class="lesson-tile" href="lesson-01.html" data-slug="lesson-01">
+        <span class="tile-num">Lesson 01</span>
+        <div class="tile-title">Say Hello</div>
+        <div class="tile-desc">Print your first message to the screen.</div>
+      </a>
+      <a class="lesson-tile" href="lesson-02.html" data-slug="lesson-02">
+        <span class="tile-num">Lesson 02</span>
+        <div class="tile-title">Variables</div>
+        <div class="tile-desc">Store and reuse values with named variables.</div>
+      </a>
+      <a class="lesson-tile" href="lesson-03.html" data-slug="lesson-03">
+        <span class="tile-num">Lesson 03</span>
+        <div class="tile-title">Numbers &amp; Math</div>
+        <div class="tile-desc">Add, divide, and do arithmetic with Python.</div>
+      </a>
+      <a class="lesson-tile" href="lesson-04.html" data-slug="lesson-04">
+        <span class="tile-num">Lesson 04</span>
+        <div class="tile-title">Strings</div>
+        <div class="tile-desc">Join, repeat, and format text.</div>
+      </a>
+      <a class="lesson-tile" href="lesson-05.html" data-slug="lesson-05">
+        <span class="tile-num">Lesson 05</span>
+        <div class="tile-title">Lists</div>
+        <div class="tile-desc">Store and manipulate ordered groups of values.</div>
+      </a>
+      <a class="lesson-tile" href="lesson-06.html" data-slug="lesson-06">
+        <span class="tile-num">Lesson 06</span>
+        <div class="tile-title">Making decisions</div>
+        <div class="tile-desc">Branch your program&#x27;s logic with if/elif/else.</div>
+      </a>
+      <a class="lesson-tile" href="lesson-07.html" data-slug="lesson-07">
+        <span class="tile-num">Lesson 07</span>
+        <div class="tile-title">Loops</div>
+        <div class="tile-desc">Repeat actions with for and while loops.</div>
+      </a>
+      <a class="lesson-tile" href="lesson-08.html" data-slug="lesson-08">
+        <span class="tile-num">Lesson 08</span>
+        <div class="tile-title">Functions</div>
+        <div class="tile-desc">Package up code you can call again and again.</div>
+      </a>
+      <a class="lesson-tile" href="lesson-09.html" data-slug="lesson-09">
+        <span class="tile-num">Lesson 09</span>
+        <div class="tile-title">Dictionaries</div>
+        <div class="tile-desc">Store data as labeled key-value pairs.</div>
+      </a>
+      <a class="lesson-tile" href="lesson-10.html" data-slug="lesson-10">
+        <span class="tile-num">Lesson 10</span>
+        <div class="tile-title">Tuples &amp; Sets</div>
+        <div class="tile-desc">Fixed groups with tuples, unique groups with sets.</div>
+      </a>
+      <a class="lesson-tile" href="lesson-11.html" data-slug="lesson-11">
+        <span class="tile-num">Lesson 11</span>
+        <div class="tile-title">Handling errors</div>
+        <div class="tile-desc">Handle problems gracefully instead of crashing.</div>
+      </a>
+      <a class="lesson-tile" href="lesson-12.html" data-slug="lesson-12">
+        <span class="tile-num">Lesson 12</span>
+        <div class="tile-title">Classes</div>
+        <div class="tile-desc">Model real things with your own custom types.</div>
+      </a></div>
+    </section>
+
+  </main>
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
